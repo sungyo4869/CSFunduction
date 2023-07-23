@@ -20,3 +20,8 @@ var aisatsu = "ohayou";  //このあとにaisatsu = 100;とかくとエラー
 var tensu = 100;
 Console.WriteLine(aisatsu);
 Console.WriteLine(tetsu);
+
+// 定数
+const string a = "hello, world";
+// a = 100; >> error
+Console.WriteLine(a);
