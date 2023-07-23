@@ -14,3 +14,9 @@ Console.WriteLine(b);
 string a = "10";
 int b = int.Parse(a);
 Console.WriteLine(b);
+
+// varと型推論
+var aisatsu = "ohayou";  //このあとにaisatsu = 100;とかくとエラー
+var tensu = 100;
+Console.WriteLine(aisatsu);
+Console.WriteLine(tetsu);
