@@ -1,27 +1,19 @@
-﻿// 整数型と小数型
-int a = 5;
-double b = 5.5;
+﻿namespace HelloWorld
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var House = new House();
+            House.Create("A");
+        }
+    }
 
-Console.WriteLine(a);
-Console.WriteLine(b);
-
-// キャスト
-long a = 5;
-int b = (int)a;  // int b = a; >> error
-Console.WriteLine(b);
-
-// パース
-string a = "10";
-int b = int.Parse(a);
-Console.WriteLine(b);
-
-// varと型推論
-var aisatsu = "ohayou";  //このあとにaisatsu = 100;とかくとエラー
-var tensu = 100;
-Console.WriteLine(aisatsu);
-Console.WriteLine(tetsu);
-
-// 定数
-const string a = "hello, world";
-// a = 100; >> error
-Console.WriteLine(a);
+    class House
+    {
+        public void Create(string name)
+        {
+            Console.WriteLine(name + "さんの家を作りました!");
+        }
+    }
+}
