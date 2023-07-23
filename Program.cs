@@ -1,7 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-string helloworld = "Hello, World";
+﻿// 整数型と小数型
+int a = 5;
+double b = 5.5;
 
-Console.WriteLine(helloworld);
-Console.WriteLine(helloworld);
-Console.WriteLine(helloworld);
-Console.WriteLine(helloworld);
+Console.WriteLine(a);
+Console.WriteLine(b);
