@@ -4,18 +4,21 @@
     {
         static void Main(string[] args)
         {
-            var Person = new Person("A", 5);
+            var Voice = new Voice();
+            Voice.WakeUp();
+            Voice.WakeUp("hina");
         }
     }
-    public class Person
+    public class Voice
     {
-        private string _name;
-        private int _age;
-
-        public Person(string name, int age)
+        public void WakeUp()
         {
-            _name = name;
-            _age = age;
+            Console.WriteLine("起きなさい！");
+        }
+
+        public void WakeUp(string name)
+        {
+            Console.WriteLine(name + "起きなさい！");
         }
     }
 }
