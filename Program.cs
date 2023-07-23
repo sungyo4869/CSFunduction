@@ -4,21 +4,18 @@
     {
         static void Main(string[] args)
         {
-            var House = new House("A");
-            House.Create();
+            var Person = new Person("A", 5);
         }
     }
-
-    class House
+    public class Person
     {
-        public string Name;
-        public House(string name)
+        private string _name;
+        private int _age;
+
+        public Person(string name, int age)
         {
-            Name = name;
-        }
-        public void Create()
-        {
-            Console.WriteLine(Name + "さんの家を作りました!");
+            _name = name;
+            _age = age;
         }
     }
 }
