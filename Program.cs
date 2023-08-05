@@ -5,26 +5,34 @@
         static void Main(string[] args)
         {
             var anonatsu = new Anonatsu();
-            anonatsu.hobby = "sleep";
-            anonatsu.Name = "anonatsu";
-
-            Console.WriteLine(anonatsu.Name);
-
-            anonatsu.sayHi();
+            anonatsu.SelfIntroduction();
         }
     }
 
     public class Person
     {
-        public string Name;
-        public void sayHi()
-        {
-            Console.WriteLine("Hi");
-        }
+        protected string Name;
+        // private string Name;　とすると継承さきでは使えない
     }
 
     public class Anonatsu:Person
     {
-        public string hobby;
+        public string Hobby = "Programming";
+
+        public void SelfIntroduction()
+        {
+            Name = "あの夏";
+            Console.WriteLine(Name + "です。趣味は" + Hobby + "です。");
+        }
+    }
+
+    public class Dummy
+    {
+        public void SelfIntroduction()
+        {
+            var person = new Person();
+            // person.Name = "test";
+            // ↑ 継承していないので使えない
+        }
     }
 }
