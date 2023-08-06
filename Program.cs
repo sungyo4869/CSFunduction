@@ -9,27 +9,14 @@
         }
     }
 
-    public interface IPerson
-    // インターフェースは暗黙の了解的にIを入れる
+    public sealed class Person
     {
-        public void SayHi();
-    }
-    public interface ICreature
-    {
-        public string Voice();
+        public string Name;
     }
 
-    public class Anonatsu : IPerson, ICreature
-    // 抽象クラスと違って二つ以上継承できる
-    {
-        public void SayHi()
-        {
-            Console.WriteLine("I'm anonatsu");
-        }
-
-        public void Voice()
-        {
-            
-        }
-    }
+    // public class Anonatsu : Person
+    // {
+        
+    // }
+    // sealedがついてるから継承できない
 }
