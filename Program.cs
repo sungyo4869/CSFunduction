@@ -2,34 +2,39 @@
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var anonatsu = new Anonatsu();
-            anonatsu.SelfIntroduction();
+            var anonatsu = new Anonatsu("anonatsu");
 
-        }
+            anonatsu.SayHi();
 
-    }
-
-    public class Person
-    {
-        public string Name;
-
-        public void SelfIntroduction()
-        {
-            Console.WriteLine("I'm a Person.");
+            // var person = new Person();
+            // ↑ は出来ない (抽象クラスだから)
         }
     }
 
-    public class Anonatsu:Person
+    public abstract class Person
     {
-        public void SelfIntroduction()
+        protected string _name;
+
+        public Person(string name)
         {
-            base.SelfIntroduction();
-            // 継承元のSelfIntroductionが呼ばれる
-            
-            Name = "anonatsu";
-            Console.WriteLine("I'm " + Name + ".");
+            _name = name;
+        }
+
+        public abstract void SayHi();
+        // メソッド名と戻り値だけ書く
+    }
+
+    public class Anonatsu : Person
+    {
+        public Anonatsu(string name) : base(name)
+        {
+        }
+
+        public override void SayHi()
+        {
+            Console.WriteLine("I'm " + _name);
         }
     }
 }
