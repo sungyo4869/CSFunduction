@@ -2,23 +2,22 @@
 {
     public class Program
     {
+        public delegate void Test(string s);
         public static void Main(string[] args)
         {
-            // 二通り書き方がある
-            var list1 = new List<string>();
+            var test = new Test(TestMethod1);
+            test += new Test(TestMethod2);
+            test("yes");
+        }
 
-            list1.Add("a");
-            list1.Add("b");
-            list1.Add("c");
+        public static void TestMethod1 (string s)
+        {
+            Console.WriteLine(s + "!");
+        }
 
-            var list2 = new List<string>
-            {
-                "a", "b", "c"
-            };
-
-            var array = new string[3] {"a", "b", "c"};
-
-            Console.WriteLine(list1[0]);
+        public static void TestMethod2 (string s)
+        {
+            Console.Write(s + "!!!");
         }
     }
 }
