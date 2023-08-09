@@ -5,18 +5,13 @@
         public delegate void Test(string s);
         public static void Main(string[] args)
         {
-            // var test = new Test(TestMethod1);
+            var test1 = (string s) => Console.WriteLine(s + "!");
+            var test2 = () => Console.WriteLine("yaho");
+            var test3 = () => 1;   // {return 1;} ともかける
 
-            var test = delegate (string s) 
-            {
-                Console.WriteLine(s + "!");
-            };
-            test("yes");
+            test1("yes");
+            test2();
+            Console.WriteLine(test3());
         }
-
-        // public static void TestMethod1 (string s)
-        // {
-        //     Console.WriteLine(s + "!");
-        // }
     }
 }
