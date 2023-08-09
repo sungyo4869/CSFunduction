@@ -2,35 +2,36 @@
 {
     public class Program
     {
-        public delegate void Test(string s);
         public static void Main(string[] args)
         {
-           var greeting = new Greeting();
-           greeting.Word = "hello";
+            Creature dog = new Dog();
+            Creature cat = new Cat();
 
-           Console.WriteLine(greeting.Word);
+            dog.Voice();
+            cat.Voice();
         }
     }
 
-    public class Greeting
+    public class Creature
     {
-        // // private string _word;
+        public virtual void Voice () // virtual修飾詞があると継承先で上書きできる
+        {
+        }
+    }
 
-        // // public string Word {
-        // //     get { return _word; }
-        // //     set { _word = value; }
-        // // }
+    public class Dog : Creature
+    {
+        public override void Voice ()
+        {
+            Console.WriteLine ("わんわん");
+        }
+    }
 
-        // public string  GetWorld()
-        // {
-        //     return _word;
-        // }
-
-        // public void SetWorld(string word)
-        // {
-        //     _word = word;
-        // }
-
-        public string Word { get; set;}
+    public class Cat : Creature
+    {
+        public override void Voice ()
+        {
+            Console.WriteLine ("ニャー");
+        }
     }
 }
