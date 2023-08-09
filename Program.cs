@@ -5,13 +5,32 @@
         public delegate void Test(string s);
         public static void Main(string[] args)
         {
-            var test1 = (string s) => Console.WriteLine(s + "!");
-            var test2 = () => Console.WriteLine("yaho");
-            var test3 = () => 1;   // {return 1;} ともかける
+           var greeting = new Greeting();
+           greeting.Word = "hello";
 
-            test1("yes");
-            test2();
-            Console.WriteLine(test3());
+           Console.WriteLine(greeting.Word);
         }
+    }
+
+    public class Greeting
+    {
+        // // private string _word;
+
+        // // public string Word {
+        // //     get { return _word; }
+        // //     set { _word = value; }
+        // // }
+
+        // public string  GetWorld()
+        // {
+        //     return _word;
+        // }
+
+        // public void SetWorld(string word)
+        // {
+        //     _word = word;
+        // }
+
+        public string Word { get; set;}
     }
 }
